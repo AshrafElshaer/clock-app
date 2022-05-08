@@ -1,0 +1,11 @@
+.activeAlarmDisplay{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    z-index: 999;
+}
+.activeAlarmTime{
+    font-size: 2.5rem;
+}

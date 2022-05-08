@@ -1,0 +1,39 @@
+.stopWatch{
+    display: none;
+}
+.stopWatch .watchWrapper{
+    display: flex;
+    font-size: 1.5rem;
+
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1rem 1rem 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+
+}
+.watchBtnWrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.stopWatch .scroll{
+    height: 19rem !important;
+}
+
+
+.labDisplay .listItem .labCount{
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+.labDisplay .listItem .lab{
+    font-size: 1.5rem;
+    color: var(--secondary);
+    margin-right: auto;
+    margin-left: 2.5rem;
+}
+
+

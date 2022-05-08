@@ -1,0 +1,122 @@
+@import url('newAlarm.css');
+
+.alarm{
+    display: none;
+    overflow-x: hidden;
+    z-index: 1;
+
+}
+.alarmHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1rem;
+}
+.clockDisplay{
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1rem 1rem 0;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+}
+.clockDisplay .am-pm{
+    font-size: 1.2rem;
+}
+
+.alarmList .clear,
+.alarmList .edit {
+    position: relative;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.alarmList .clear {
+    transform: translateX(40px);
+}
+
+.alarmList .edit {
+    transform: translateX(-40px);
+
+}
+
+
+
+.alarmList .am-pm {
+    transform: translateX(-20px);
+    margin-right: auto;
+    /* transition: all 0.2s ease-in-out; */
+}
+
+.alarmList .time {
+    /* transition: all 0.2s ease-in-out; */
+    transform: translateX(-20px);
+
+
+}
+
+.listItem.active .clear,
+.listItem.active .edit {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: visible;
+    position: relative;
+}
+
+
+
+
+.listItem.active .toggle {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.listItem.active .time,
+.listItem.active .am-pm {
+    transform: translateX(10px);
+}
+
+
+.toggle {
+    display: inline-block;
+    cursor: pointer;
+    transform: translateX(35px);
+}
+
+.toggleInput {
+    display: none;
+}
+
+.toggle.activeAlarm .toggleFill {
+    opacity: 1;
+}
+
+.toggle.activeAlarm .toggleFill::after {
+    transform: translateX(100%);
+}
+
+.toggleFill {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background: var(--secondary);
+    opacity: 0.5;
+}
+
+.toggleFill::after {
+    content: '';
+    width: 50%;
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+
+

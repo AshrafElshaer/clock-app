@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock App</title>
+    <link rel="stylesheet" href="style/style.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!-- FONT AWOSEM -->
+    <script src="https://kit.fontawesome.com/e61669cb39.js" crossorigin="anonymous"></script>
+    <!-- AXIOS  -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+    <!-- LUXON  -->
+    <script src="https://moment.github.io/luxon/global/luxon.min.js" defer></script>
+    <script src="scripts/navBar.js" defer ></script>
+    <script src="scripts/worldClock.js" defer ></script>
+    <script src="scripts/alarm.js" defer ></script>
+    <script src="scripts/addNewAlarm.js" defer></script>
+    <script src="scripts/stopWatch.js" defer></script>
+    <script src="scripts/timer.js" defer></script>
+</head>
+
+<body class="dark-theme">
+    <main class="display">
+        <header class="header">
+            <h1 class="title" id="title">World Clock</h1>
+            <button class="material-icons btn" id="switchTheme">
+                dark_mode
+            </button>
+        </header>
+
+
+        <section class="world">
+            <form id="cityInput">
+                <input type="text" name="cityName" id="cityName" placeholder="Add New City" autocomplete="off">
+                <button class="material-icons" type="submit">
+                    add
+                </button>
+            </form>
+            <ul class="cities scroll">
+                
+            </ul>
+        </section>
+
+        <section class="alarm">
+            <div class="alarmHeader">
+                <button class="btn-cta" id="editBtn">
+                    Edit
+                </button>
+                <button class="material-icons btn-cta" id="addAlarm">
+                    add
+                </button>
+            </div>
+            <div class="clockDisplay">
+                <time class="hoursDisplay">00</time>
+                :
+                <time class="minutesDisplay">00</time>
+                :
+                <time class="secondsDisplay">00</time>
+                <span class="am-pm">AM</span>
+            </div>
+
+            <ul class="alarmList scroll ">
+                
+            </ul>
+            <div class="newAlarm">
+                <div class="timeInputWrapper">
+                    <div class="selectTime">
+                        <button class="material-icons btn-cta up">
+                            expand_less
+                        </button>
+                        <input type="number" id="hoursInput" min="1" max="12" />
+                        <button class="material-icons btn-cta down">
+                            expand_more
+                        </button>
+                    </div>
+                    :
+                    <div class="selectTime">
+                        <button class="material-icons btn-cta up">
+                            expand_less
+                        </button>
+                        <input type="number" min="0" max="59" id="minutesInput" max="59"/>
+                        <button class="material-icons btn-cta down">
+                            expand_more
+                        </button>
+                    </div>
+                    :
+                    <div class="selectTime">
+                        <button class="material-icons btn-cta up">
+                            expand_less
+                        </button>
+                        <span id="am-pm">AM</span>
+                        <button class="material-icons btn-cta down">
+                            expand_more
+                        </button>
+                    </div>
+                </div>
+                <div class="timeBtnWrapper">
+                    <button class="material-icons btn" id="newAlarm">add</button>
+                    <button class="material-icons btn" id="cancelAlarm">clear</button>
+                </div>
+            </div>
+            
+        </section>
+        <section class="activeAlarmDisplay">
+            <time class="activeAlarmTime">
+                
+            </time>
+            <button class="stop btn-larg">Stop</button>
+        </section>
+
+        <section class="stopWatch">
+            <div class="watchWrapper">
+                <div class="watchTimerHours">00</div>
+                :
+                <div class="watchTimerMinutes">00</div>
+                :
+                <div class="watchTimerSeconds">00</div>
+                :
+                <div class="watchTimerMilliSeconds">00</div>
+
+            </div>
+            
+            <div class="labDisplay">
+                <ul class="cities scroll">
+                    
+                </ul>
+            </div>
+            <div class="watchBtnWrapper">
+                <button class="btn-larg reset" id="stopWatchReset">Reset</button>
+                <button class="btn-larg start" id="stopWatchStart">Start</button>
+
+            </div>
+        </section>
+
+        <section class="timer">
+            <div class="timeInputWrapper ">
+                <div class="selectTime">
+                    <button class="material-icons btn-cta up">
+                        expand_less
+                    </button>
+                    <input type="number" id="hoursInput" min="0"value="00"/>
+                    <button class="material-icons btn-cta down">
+                        expand_more
+                    </button>
+                </div>
+                :
+                <div class="selectTime">
+                    <button class="material-icons btn-cta up">
+                        expand_less
+                    </button>
+                    <input type="number" min="0" max="59" id="minutesInput" value="00"/>
+                    <button class="material-icons btn-cta down">
+                        expand_more
+                    </button>
+                </div>
+                :
+                <div class="selectTime">
+                    <button class="material-icons btn-cta up">
+                        expand_less
+                    </button>
+                    <input type="number" min="0" max="59" id="secondsInput" value="00"/>
+                    <button class="material-icons btn-cta down">
+                        expand_more
+                    </button>
+                </div>
+            </div>
+            <div class="watchBtnWrapper">
+                <button class="btn-larg" id="timerReset">Reset</button>
+                <button class="btn-larg start" id="timerStart">Start</button>
+            </div>
+
+        </section>
+
+
+
+
+        <nav class="navbar">
+            <ul class="navList">
+                <li class="">
+                    <button class="material-icons btn clicked" id="worldClock">
+                        language
+                    </button>
+                </li>
+                <li class="">
+                    <button class="material-icons btn " id="alarm">
+                        alarm
+                    </button>
+                </li>
+                <li class="">
+                    <button class="material-icons btn" id="stopWatch">
+                        timer
+                    </button>
+                </li>
+                <li class="">
+                    <button class="material-icons btn" id="timer">
+                        av_timer
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        
+    </main>
+
+
+
+</body>
+
+</html>

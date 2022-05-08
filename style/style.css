@@ -1,0 +1,218 @@
+@import url('assets/worldClock.css');
+@import url('assets/alarm.css');
+@import url('assets/stopWatch.css');
+@import url('assets/timer.css');
+@import url('assets/activeAlarmDisplay.css');
+
+
+.dark-theme {
+  --primary: #4492c3;
+  --secondary: #39769c;
+  --bg: #2D343E;
+  --shadow: 5px 5px 10px #1f242b,
+           -5px -5px 10px #3b4451;
+  --clicked: inset 5px 5px 10px #1f242b,
+             inset 5px -5px 10px #3b4451;
+  --clicked-bg: linear-gradient(145deg, #292f38, #303842);
+  ;
+
+}
+
+.light-theme {
+  --primary: #806A6A;
+  --secondary: #B9ABAB;
+  --bg: #EFEAEA;
+  --body-bg:#B9ABAB;
+  --shadow: 5px 5px 10px #a5a1a1,
+           -5px -5px 10px #ffffff;
+  --clicked:inset 5px 5px 10px #a5a1a1,
+            inset 5px -5px 10px #ffffff;
+  --clicked-bg: linear-gradient(145deg, #a5a1a1, #fffafa);
+
+
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+
+
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+body {
+  background: var(--bg);
+  height: 90vh;
+  display: grid;
+  place-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.2rem;
+  color: var(--primary);
+
+}
+
+li {
+  list-style: none;
+}
+
+button,
+input[type="text"] {
+  all: unset;
+}
+input{
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
+
+}
+input::placeholder{
+  color: var(--primary);
+}
+
+input:focus{
+  background: none;
+}
+
+button {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+}
+
+
+.btn {
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn-larg{
+  margin-top: 1rem;
+  margin-inline: 0.5rem;
+  padding: 0.75rem 3rem;
+  background-color: var(--bg); 
+  box-shadow: var(--shadow); 
+  border-radius: 10px;
+  
+}
+
+
+.material-icons {
+  font-size: 2rem !important;
+
+}
+
+.clicked {
+  box-shadow: var(--clicked) !important;
+  background: var(--clicked-bg) !important;
+}
+.clear{
+  font-size: 1.5rem !important;
+}
+.am-pm {
+  color: var(--secondary);
+  font-size: 1rem;
+  position: relative;
+
+}
+
+.display {
+  position: relative;
+  height:650px;
+  width: 330px;
+  padding-block: 1.5rem;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.display .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary);
+  padding-inline: 1rem;
+
+}
+.display .header .title{
+  font-size: 2rem;
+  font-family: 'Source Sans Pro';
+
+}
+
+
+
+.navbar{
+  padding-inline: 1rem;
+
+}
+
+.navList {
+  display: flex;
+  justify-content: space-around;
+
+}
+section{
+  position: absolute;
+  top: 7rem;
+  overflow: hidden;
+  min-height: 70%;
+  width: 100%;
+}
+.scroll{
+  padding-inline: 1rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  max-height: 22rem;
+}
+
+.listItem {
+  font-size: 1.2rem;
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  margin-block: 1.5rem;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  border-radius: 50px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+}
+
+.time {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: relative;
+}
+.clear , .edit {
+  font-size: 1.5rem !important;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  margin-inline: 0.5rem;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* __________________________________________ */

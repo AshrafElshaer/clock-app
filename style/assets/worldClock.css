@@ -1,0 +1,47 @@
+.world {
+  /* display: none; */
+}
+
+
+.world form {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  padding-inline: 1rem;
+  align-items: center;
+  border-bottom: 1px solid var(--secondary);
+  /* position: fixed; */
+
+}
+
+.world .cities {
+  position: relative;
+}
+
+
+
+.world .cities .listItem .cityName {
+  margin-right: auto;
+  
+
+}
+
+
+.world .cities .listItem .time,
+.world .cities .listItem .am-pm {
+  left: 25px;
+}
+
+.world .cities .listItem .clear {
+  right: -20px;
+  opacity: 0;
+}
+
+.world .cities .listItem:hover .time,
+.world .cities .listItem:hover .am-pm {
+  left: -10px;
+}
+.world .cities .listItem:hover .clear {
+  right: 0;
+  opacity: 1;
+}
