@@ -112,7 +112,7 @@ const resetCounting = function () {
     if (!this.classList.contains('reset')) {
         labCount += 1;
         const time = `${stopWatchHoursDisplay.textContent}:${stopWatchMinutesDisplay.textContent}:${stopWatchSecondsDisplay.textContent}:${stopWatchMilliSecondsDisplay.textContent}`
-        console.log(time)
+        
 
         const html = `<li class="listItem">
         <span class="labCount">${labCount.toString()}</span>
