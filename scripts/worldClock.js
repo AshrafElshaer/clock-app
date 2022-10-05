@@ -17,7 +17,7 @@ const findCity = async (cityName) => {
     const config = {
         params: {
             address: cityName,
-            key: 'AIzaSyAkuDeifmGeKhoYbofnEmkic5s0tPok1pI'
+            key: 'AIzaSyDbWEAryKuJVkcmsPiNxu_Q4Gzug8K5DYw'
         }
     }
     try {
